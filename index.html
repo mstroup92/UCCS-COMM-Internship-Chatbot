@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .status {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 Chatbot Test Environment</h1>
+        
+        <div class="status">
+            <h3>Status: Testing</h3>
+            <p><strong>Look for:</strong> A chat bubble in the bottom-right corner of this page</p>
+            <p><strong>If working:</strong> Click the bubble to start chatting</p>
+        </div>
+        
+        <h2>Test These Messages:</h2>
+        <ul>
+            <li>"Hello" - Test welcome</li>
+            <li>"How many hours do I need for credit?" - Test main flow</li>
+            <li>"I want to get credit for my internship" - Test getting started</li>
+        </ul>
+    </div>
+
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Internship_Credit_Assistant"
+  agent-id="7833e348-2cdb-46e1-bc7f-b6ab78a29ffc"
+  language-code="en"
+></df-messenger>
+    
+</body>
+</html>
