@@ -41,11 +41,27 @@
         bottom: 16px;
         right: 16px;
     }
-        /* Custom chat icon */
-df-messenger::part(chat-bubble-button-icon) {
-    background-image: url('https://mstroup92.github.io/UCCS-COMM-Internship-Chatbot/UCCS-LOGO.png');
-    background-size: cover;
-    background-position: center;
+/* Hide default icon and add custom background */
+df-messenger {
+    --df-messenger-bot-message: #0C2340;
+    --df-messenger-button-titlebar-color: #0C2340;
+    --df-messenger-button-titlebar-font-color: #FFFFFF;
+    --df-messenger-chat-background-color: #F5F5F5;
+    --df-messenger-font-color: white;
+    --df-messenger-send-icon: #CFB87C;
+    --df-messenger-user-message: #CFB87C;
+    --df-messenger-chat-bubble-icon-size: 48px;
+    z-index: 999;
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+}
+
+/* Try targeting the button directly */
+df-messenger .chat-bubble-button {
+    background-image: url('https://mstroup92.github.io/UCCS-COMM-Internship-Chatbot/UCCS-LOGO.png') !important;
+    background-size: cover !important;
+    background-position: center !important;
 }
     </style>
 </head>
