@@ -29,40 +29,18 @@
             margin: 20px 0;
         }
         df-messenger {
-        --df-messenger-bot-message: #0C2340;
-        --df-messenger-button-titlebar-color: #0C2340;
-        --df-messenger-button-titlebar-font-color: #FFFFFF;
-        --df-messenger-chat-background-color: #F5F5F5;
-        --df-messenger-font-color: white;
-        --df-messenger-send-icon: #CFB87C;
-        --df-messenger-user-message: #CFB87C;
-        z-index: 999;
-        position: fixed;
-        bottom: 16px;
-        right: 16px;
-    }
-/* Hide default icon and add custom background */
-df-messenger {
-    --df-messenger-bot-message: #0C2340;
-    --df-messenger-button-titlebar-color: #0C2340;
-    --df-messenger-button-titlebar-font-color: #FFFFFF;
-    --df-messenger-chat-background-color: #F5F5F5;
-    --df-messenger-font-color: white;
-    --df-messenger-send-icon: #CFB87C;
-    --df-messenger-user-message: #CFB87C;
-    --df-messenger-chat-bubble-icon-size: 48px;
-    z-index: 999;
-    position: fixed;
-    bottom: 16px;
-    right: 16px;
-}
-
-/* Try targeting the button directly */
-df-messenger .chat-bubble-button {
-    background-image: url('https://mstroup92.github.io/UCCS-COMM-Internship-Chatbot/UCCS-LOGO.png') !important;
-    background-size: cover !important;
-    background-position: center !important;
-}
+            --df-messenger-bot-message: #0C2340;
+            --df-messenger-button-titlebar-color: #0C2340;
+            --df-messenger-button-titlebar-font-color: #FFFFFF;
+            --df-messenger-chat-background-color: #F5F5F5;
+            --df-messenger-font-color: white;
+            --df-messenger-send-icon: #CFB87C;
+            --df-messenger-user-message: #CFB87C;
+            z-index: 999;
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+        }
     </style>
 </head>
 <body>
@@ -82,14 +60,37 @@ df-messenger .chat-bubble-button {
             <li>"I want to get credit for my internship" - Test getting started</li>
         </ul>
     </div>
-
-  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-<df-messenger
-  intent="WELCOME"
-  chat-title="UCCS Internship Assistant"
-  agent-id="7833e348-2cdb-46e1-bc7f-b6ab78a29ffc"
-  language-code="en"
-></df-messenger>
+    
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger
+      intent="WELCOME"
+      chat-title="UCCS Internship Assistant"
+      agent-id="7833e348-2cdb-46e1-bc7f-b6ab78a29ffc"
+      language-code="en"
+    ></df-messenger>
+    
+    <script>
+        // Wait for the messenger to load, then customize the icon
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const dfMessenger = document.querySelector('df-messenger');
+                if (dfMessenger && dfMessenger.shadowRoot) {
+                    const style = document.createElement('style');
+                    style.textContent = `
+                        .chat-bubble-button-icon {
+                            background-image: url('https://mstroup92.github.io/UCCS-COMM-Internship-Chatbot/UCCS-LOGO.png') !important;
+                            background-size: cover !important;
+                            background-position: center !important;
+                        }
+                        .chat-bubble-button-icon svg {
+                            display: none !important;
+                        }
+                    `;
+                    dfMessenger.shadowRoot.appendChild(style);
+                }
+            }, 1000);
+        });
+    </script>
     
 </body>
 </html>
