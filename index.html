@@ -28,6 +28,19 @@
             border-radius: 5px;
             margin: 20px 0;
         }
+        df-messenger {
+        --df-messenger-bot-message: #0C2340;
+        --df-messenger-button-titlebar-color: #0C2340;
+        --df-messenger-button-titlebar-font-color: #FFFFFF;
+        --df-messenger-chat-background-color: #F5F5F5;
+        --df-messenger-font-color: white;
+        --df-messenger-send-icon: #CFB87C;
+        --df-messenger-user-message: #CFB87C;
+        z-index: 999;
+        position: fixed;
+        bottom: 16px;
+        right: 16px;
+    }
     </style>
 </head>
 <body>
@@ -51,9 +64,10 @@
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   intent="WELCOME"
-  chat-title="Internship_Credit_Assistant"
+  chat-title="UCCS Internship Assistant"
   agent-id="7833e348-2cdb-46e1-bc7f-b6ab78a29ffc"
   language-code="en"
+  chat-icon="https://www.uccs.edu/Images/homepage/UCCS-logo.png"
 ></df-messenger>
     
 </body>
